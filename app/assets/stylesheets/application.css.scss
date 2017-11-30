@@ -1,0 +1,281 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$main-color: #e9289c;
+$accent-color1: #F37EC5;
+$accent-color2: #BE5B00;
+$accent-color3: #FFC695;
+$black: #212121;
+$fancy-font: 'Open Sans', Helvetica, Arial, sans-serif;
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.75em;
+  font-family: $fancy-font;
+  font-weight: 300;
+  background: #fefefe;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    color: $accent-color1;
+  }
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.75em;
+  font-weight: 300;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 3em;
+  font-weight: 300;
+  line-height: 3rem;
+}
+
+::selection {
+  color: #fff;
+  background: $main-color;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: $main-color;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.full-width-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.home-content {
+  margin: 1vh 0;
+  width: 77%;
+  margin-right: 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.home-sidebar {
+  margin: 1vh 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content {
+  margin: 1vh auto;
+  width: 70%;
+  vertical-align: top;
+}
+
+.three-column {
+  margin: 1.5% 0;
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.category-title {
+  font-size: .75em;
+  margin: 3vh 0 0 0;
+}
+
+.group-title {
+  font-size: 1.25em;
+  margin: 0 0 3vh 0;
+}
+
+.post-title {
+  font-size: 2em;
+  margin: 0 0 5vh 0;
+}
+
+/* ************** NAV **************** */
+
+.previous-next {
+  width: 49%;
+  display: inline-block;
+  padding: 10px 1vw;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  border: 3px solid $main-color;
+  background-color: transparent;
+  color: $main-color;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background-color: $main-color;
+    color: #fff;
+  }
+}
+
+.side-nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: block;
+      padding: 2vh 2vw;
+      position: relative;
+    }
+  }
+}
+
+.side-nav-links {
+  color: $main-color;
+  border-left: 3px solid transparent;
+  &:hover {
+    color: $accent-color1;
+    border-left: 3px solid $accent-color1;
+  }
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-title {
+  display: inline-block;
+  color: $main-color;
+  padding: 2vh 0 1vh 0;
+  font-weight: 300;
+  font-size: 2em;
+  &:hover {
+    text-decoration: none;
+    color: $accent-color1;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    float: right;
+    li {
+      display: inline-block;
+      padding: 2vh 0 1vh 0;
+      position: relative;
+      margin-left: 5vw;
+    }
+  }
+}
+
+.nav-links {
+  color: $main-color;
+  &:hover {
+    color: $accent-color1;
+  }
+}
+
+.full-footer-container {
+  width: 100%;
+  clear: both;
+  margin-top: 5vh;
+  padding: 2vh 0;
+}
+
+.footer {
+  width: 100%;
+  display: inline-block;
+  span {
+    float: left;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 1vw;
+      &:first-child {
+        margin: 0 1vw 0 0;
+      }
+    }
+  }
+}
+
+.footer-disclaimer {
+  font-size: .75em;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

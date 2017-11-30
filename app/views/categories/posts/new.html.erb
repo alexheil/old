@@ -1,0 +1,28 @@
+<%= provide(:title, "Create New Post | Halowake") %>
+
+<div>Create New Post</div>
+      
+<%= form_for(@post, url: category_group_posts_path) do |f| %>
+  <%= render 'partials/post_errors' %>
+  <div class="field">
+    <%= f.text_field :number, placeholder: "Number", class: "text-field" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :embed, placeholder: "Embed", class: "text-field" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Post", class: "submit-button" %>
+  </div>
+<% end %>

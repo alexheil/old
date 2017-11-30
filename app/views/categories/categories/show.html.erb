@@ -1,0 +1,37 @@
+<%= link_to "Create New Group", new_category_group_path(@category) %>
+
+<div class="full-width-container">
+  <div class="container">
+
+    
+
+    <sidebar class="home-sidebar">
+      <% if @categories.any? %>
+        <div class="side-nav">
+          <ul>
+            <% @categories.each do |category| %>
+              <li class="side-nav-links"><%= link_to category.title, category_path(category) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </sidebar>
+
+
+
+    <main class="home-content">
+      <div class="post-title">
+        <%= @category.title %>
+      </div>
+      <% @category.groups.each do |group| %>
+        <div class="three-column">
+          <%= image_tag(group.image, height: '100%', width: '100%' ) %></br>
+          <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
+        </div>
+      <% end %>
+    </main>
+
+
+    
+  </div>
+</div>

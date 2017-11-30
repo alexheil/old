@@ -1,0 +1,22 @@
+<footer class="full-footer-container">
+  <div class="container">
+    <nav class="footer">
+      <span><%= link_to "halowake", root_url, class: "nav-links" %></span>
+      <ul>
+        <li><%= link_to "Terms of Use", '#', class: "nav-links" %></li>
+        <li><%= link_to "Privacy", '#', class: "nav-links" %></li>
+        <li><%= link_to "DMCA Policy", '#', class: "nav-links" %></li>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Create Category", new_category_path, class: "nav-links" %></li>
+          <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="footer-disclaimer">
+      This site is for entertainment purposes only.
+    </div>
+    <div class="footer-disclaimer">
+      Built in Buffalo, New York, United States of America, Earth.
+    </div>
+  </div>
+</footer>

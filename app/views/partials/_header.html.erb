@@ -1,0 +1,15 @@
+<header class="full-width-container">
+  <div class="header-container">
+    <nav class="nav">
+      <%= link_to "halowake", root_url, class: "site-title" %>
+      <ul>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Create Category", new_category_path, class: "nav-links" %></li>
+          <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
+        <% end %>
+        <li><%= link_to "Categories", categories_path, class: "nav-links" %></li>
+        <li><%= link_to "Popular", categories_path, class: "nav-links" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

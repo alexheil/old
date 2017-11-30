@@ -1,0 +1,27 @@
+<div class="full-width-container">
+  <div class="container">
+
+    <div class="category-title">
+      <%= @category.title %>
+    </div>
+    <div class="group-title">
+      <%= @group.title %>
+    </div>
+    <div class="post-title">
+      <%= @post.title %>
+    </div>
+
+    <div class="content">
+      <%= image_tag(@post.image, height: '100%', width: '100%' ) %></br>
+      <%= @post.content %></br>
+
+      <% if @post.previous.present? %>
+        <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
+      <% end %>
+      <% if @post.next.present? %>
+        <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

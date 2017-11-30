@@ -1,0 +1,27 @@
+
+<%= link_to "Create New Post", new_category_group_post_path(@category, @group) %>
+
+
+
+<div class="full-width-container">
+  <div class="container">
+
+    <div class="category-title">
+      <%= @category.title %>
+    </div>
+    <div class="post-title">
+      <%= @group.title %>
+    </div>
+
+    <div class="content">
+      <%= image_tag(@group.image, height: '100%', width: '100%' ) %></br>
+      <%= @group.content %></br>
+
+      <% if @group.posts.any? %>
+        <div>
+          <%= link_to @group.posts.first.title, category_group_post_path(@category, @group, @group.posts.first) %>
+        </div>
+      <% end %>
+
+  </div>
+</div>
