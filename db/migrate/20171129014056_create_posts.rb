@@ -5,6 +5,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.integer :number
       t.string :title
       t.string :image
+      t.string :image_source, default: ""
+      t.string :image_source_link, default: ""
       t.string :link, default: ""
       t.string :embed, default: ""
       t.text :content

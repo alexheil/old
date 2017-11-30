@@ -10,6 +10,10 @@ class Group < ApplicationRecord
 
   before_save :should_generate_new_friendly_id?, if: :title_changed?
 
+  def next_group
+    category.groups.where("id > ?", id).order(:id).first
+  end
+
   private
 
     def should_generate_new_friendly_id?

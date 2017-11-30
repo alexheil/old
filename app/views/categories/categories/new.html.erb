@@ -1,19 +1,25 @@
 <%= provide(:title, "Create New Category | Halowake") %>
 
-<div>Create New Category</div>
-      
-<%= form_for(@category, url: categories_path) do |f| %>
-  <%= render 'partials/category_errors' %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+<div class="post-title five-space center">
+  Create New Category
+</div>
+
+<div class="form-container">  
+  <div class="five-space">
+    <%= form_for(@category, url: categories_path) do |f| %>
+      <%= render 'partials/category_errors' %>
+      <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Create Category", class: "first-post" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Category", class: "submit-button" %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,34 @@
+<%= provide(:title, "Edit Group | Halowake") %>
+
+<div class="post-title five-space center">
+  Edit Group
+</div>
+
+<div class="form-container">  
+  <div class="five-space">     
+    <%= form_for(@group, url: category_group_path) do |f| %>
+      <%= render 'partials/group_errors' %>
+      <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image_source, placeholder: "Image Source", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image_source_link, placeholder: "Image Source Link", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit Group", class: "first-post" %>
+      </div>
+    <% end %>
+  </div>
+</div>

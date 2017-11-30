@@ -1,3 +1,6 @@
+<%= link_to "Edit Post", edit_category_group_post_path(@category, @group, @post) if admin_signed_in? %>
+<%= link_to "Delete", category_group_post_path, method: :delete if admin_signed_in? %>
+
 <div class="full-width-container">
   <div class="container">
 
@@ -12,14 +15,26 @@
     </div>
 
     <div class="content">
-      <%= image_tag(@post.image, height: '100%', width: '100%' ) %></br>
-      <%= @post.content %></br>
+      <div class="ten-space-top">
+        <%= image_tag(@post.image, height: '100%', width: '100%' ) %>
+      </div>
+      <div class="small-text">
+        <%= link_to @post.image_source, @post.image_source_link if @post.image_source.present? %>
+      </div>
+
+      <div class="best">
+        <%= sanitize(@post.content) %>
+      </div>
 
       <% if @post.previous.present? %>
         <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
+      <% else %>
+        <%= link_to "Back", category_group_path(@category, @group), class: "previous-next" %>
       <% end %>
       <% if @post.next.present? %>
         <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
+      <% else %>
+        <%= link_to "Continue", category_group_path(@category, @group.next_group), class: "previous-next" if @group.next_group.present? %>
       <% end %>
     </div>
 

@@ -48,11 +48,13 @@ ActiveRecord::Schema.define(version: 20171129014056) do
     t.integer  "admin_id"
     t.string   "title"
     t.string   "image"
-    t.string   "link"
+    t.string   "image_source",      default: ""
+    t.string   "image_source_link", default: ""
+    t.string   "link",              default: ""
     t.text     "content"
     t.string   "slug"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["admin_id"], name: "index_groups_on_admin_id"
     t.index ["category_id"], name: "index_groups_on_category_id"
     t.index ["slug"], name: "index_groups_on_slug"
@@ -63,12 +65,14 @@ ActiveRecord::Schema.define(version: 20171129014056) do
     t.integer  "number"
     t.string   "title"
     t.string   "image"
-    t.string   "link",       default: ""
-    t.string   "embed",      default: ""
+    t.string   "image_source",      default: ""
+    t.string   "image_source_link", default: ""
+    t.string   "link",              default: ""
+    t.string   "embed",             default: ""
     t.text     "content"
     t.string   "slug"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["group_id"], name: "index_posts_on_group_id"
     t.index ["slug"], name: "index_posts_on_slug"
   end

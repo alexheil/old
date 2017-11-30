@@ -1,0 +1,25 @@
+<%= provide(:title, "Edit Category | Halowake") %>
+
+<div class="post-title five-space center">
+  Edit Category
+</div>
+
+<div class="form-container">  
+  <div class="five-space">
+    <%= form_for(@category, url: category_path) do |f| %>
+      <%= render 'partials/category_errors' %>
+      <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit Category", class: "first-post" %>
+      </div>
+    <% end %>
+  </div>
+</div>

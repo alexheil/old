@@ -1,5 +1,7 @@
 
-<%= link_to "Create New Post", new_category_group_post_path(@category, @group) %>
+<%= link_to "Create New Post", new_category_group_post_path(@category, @group) if admin_signed_in? %>
+<%= link_to "Edit Group", edit_category_group_path(@category, @group) if admin_signed_in? %>
+<%= link_to "Delete", category_group_path, method: :delete  if admin_signed_in? %>
 
 
 
@@ -14,12 +16,20 @@
     </div>
 
     <div class="content">
-      <%= image_tag(@group.image, height: '100%', width: '100%' ) %></br>
-      <%= @group.content %></br>
+      <div class="ten-space-top">
+        <%= image_tag(@group.image, height: '100%', width: '100%' ) %>
+      </div>
+      <div class="small-text">
+        <%= link_to @group.image_source, @group.image_source_link if @group.image_source.present? %>
+      </div>
+
+      <div class="best">
+        <%= sanitize(@group.content) %>
+      </div>
 
       <% if @group.posts.any? %>
         <div>
-          <%= link_to @group.posts.first.title, category_group_post_path(@category, @group, @group.posts.first) %>
+          <%= link_to "Get Started", category_group_post_path(@category, @group, @group.posts.first), class: "first-post" %>
         </div>
       <% end %>
 

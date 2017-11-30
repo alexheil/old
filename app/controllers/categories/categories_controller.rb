@@ -1,5 +1,7 @@
 class Categories::CategoriesController < ApplicationController
 
+  before_action :authenticate_admin!, except: [:show, :index]
+
   def index
   end
 
@@ -24,12 +26,24 @@ class Categories::CategoriesController < ApplicationController
   end
 
   def update
+    @category = Category.friendly.find(params[:id])
+    if @category.update_attributes(category_params)
+      flash[:notice] = "Good job!"
+      redirect_to category_path(@category)
+    else
+      flash.now[:alert] = 'Bad job!'
+      render 'edit'
+    end
   end
 
   def edit
+    @category = Category.friendly.find(params[:id])
   end
 
   def destroy
+    @category = Category.friendly.find(params[:id]).destroy
+    redirect_to root_url
+    flash[:notice] = "Delete successful."
   end
 
   private

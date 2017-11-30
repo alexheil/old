@@ -1,0 +1,40 @@
+<%= provide(:title, "Edit Post | Halowake") %>
+
+<div class="post-title five-space center">
+  Edit Post
+</div>
+
+<div class="form-container">  
+  <div class="five-space">
+    <%= form_for(@post, url: category_group_post_path) do |f| %>
+      <%= render 'partials/post_errors' %>
+      <div class="field">
+        <%= f.text_field :number, placeholder: "Number", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image_source, placeholder: "Image Source", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :image_source_link, placeholder: "Image Source Link", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :link, placeholder: "Link", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :embed, placeholder: "Embed", class: "text-field" %>
+      </div>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Edit Post", class: "first-post" %>
+      </div>
+    <% end %>
+  </div>
+</div>

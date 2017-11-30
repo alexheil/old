@@ -1,4 +1,7 @@
-<%= link_to "Create New Group", new_category_group_path(@category) %>
+<%= link_to "Create New Group", new_category_group_path(@category) if admin_signed_in? %>
+<%= link_to "Edit Category", edit_category_path(@category) if admin_signed_in? %>
+<%= link_to "Delete", category_path, method: :delete if admin_signed_in? %>
+
 
 <div class="full-width-container">
   <div class="container">
