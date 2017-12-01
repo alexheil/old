@@ -15,20 +15,22 @@
       <%= @group.title %>
     </div>
 
-    <div class="content">
-      <div class="ten-space-top">
-        <%= image_tag(@group.image, height: '100%', width: '100%' ) %>
-      </div>
-      <div class="small-text">
-        <%= link_to @group.image_source, @group.image_source_link if @group.image_source.present? %>
+    <div class="content group-container">
+      <div class="front-container">
+        <div class="ten-space-top">
+          <%= image_tag(@group.image, height: '100%', width: '100%' ) %>
+        </div>
+        <div class="bottom-left">
+          <%= link_to @group.image_source, @group.image_source_link, class: "second-link" if @group.image_source.present? %>
+        </div>
       </div>
 
-      <div class="best">
+      <div class="best thumbnail-group-text">
         <%= sanitize(@group.content) %>
       </div>
 
       <% if @group.posts.any? %>
-        <div>
+        <div class="thumbnail-group-text">
           <%= link_to "Get Started", category_group_post_path(@category, @group, @group.posts.first), class: "first-post" %>
         </div>
       <% end %>
