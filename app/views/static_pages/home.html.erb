@@ -37,8 +37,8 @@
             <div class="group-list-title">
               <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
             </div>
-            <div class="thumbnail-group-text">
-              <%= group.content.truncate(100) %>
+            <div class="tagline-text">
+              <%= group.tagline %>
             </div>
           </div>
         </div>

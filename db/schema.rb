@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129014056) do
+ActiveRecord::Schema.define(version: 20171129013105) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,50 +31,6 @@ ActiveRecord::Schema.define(version: 20171129014056) do
     t.index ["name"], name: "index_admins_on_name", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_admins_on_slug", unique: true
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.string   "image"
-    t.string   "link"
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_categories_on_slug"
-  end
-
-  create_table "groups", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "admin_id"
-    t.string   "title"
-    t.string   "image"
-    t.string   "image_source",      default: ""
-    t.string   "image_source_link", default: ""
-    t.string   "link",              default: ""
-    t.text     "content"
-    t.string   "slug"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["admin_id"], name: "index_groups_on_admin_id"
-    t.index ["category_id"], name: "index_groups_on_category_id"
-    t.index ["slug"], name: "index_groups_on_slug"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.integer  "group_id"
-    t.integer  "number"
-    t.string   "title"
-    t.string   "image"
-    t.string   "image_source",      default: ""
-    t.string   "image_source_link", default: ""
-    t.string   "link",              default: ""
-    t.string   "embed",             default: ""
-    t.text     "content"
-    t.string   "slug"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["group_id"], name: "index_posts_on_group_id"
-    t.index ["slug"], name: "index_posts_on_slug"
   end
 
 end

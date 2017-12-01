@@ -3,7 +3,8 @@ class CreateCategories < ActiveRecord::Migration[5.0]
     create_table :categories do |t|
       t.string :title
       t.string :image
-      t.string :link
+      t.string :anchor, default: ""
+      t.string :link. default: ""
       t.string :slug
 
       t.timestamps

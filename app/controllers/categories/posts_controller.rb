@@ -58,7 +58,7 @@ class Categories::PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :number, :image, :image_source, :image_source_link, :link, :embed, :content)
+      params.require(:post).permit(:title, :number, :image, :image_source, :image_source_link, :anchor, :link, :embed, :content)
     end
 
 end

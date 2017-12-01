@@ -49,7 +49,7 @@ class Categories::CategoriesController < ApplicationController
   private
 
     def category_params
-      params.require(:category).permit(:title, :image, :link)
+      params.require(:category).permit(:title, :anchor, :image, :link)
     end
 
 end

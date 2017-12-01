@@ -54,7 +54,7 @@ class Categories::GroupsController < ApplicationController
   private
 
     def group_params
-      params.require(:group).permit(:title, :image, :image_source, :image_source_link, :link, :content)
+      params.require(:group).permit(:title, :tageline, :image, :image_source, :image_source_link, :anchor, :link, :content)
     end
 
 end
