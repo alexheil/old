@@ -33,6 +33,10 @@ body {
   background: $white;
 }
 
+img {
+  vertical-align:bottom;
+}
+
 ul {
   list-style: none;
 }
@@ -160,6 +164,14 @@ h4 {
   font-size: .75em;
 }
 
+.medium-text {
+  font-size: 1.5em;
+}
+
+.one-space {
+  margin: 1vh 0;
+}
+
 .three-space {
   margin: 3vh 0;
 }
@@ -222,8 +234,37 @@ h4 {
   object-fit: cover;
 }
 
+.one-column {
+  margin: 0;
+  width: 35%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.second-column {
+  margin: 0;
+  width: 64%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.group-container {
+  border: 1px solid #eee;
+}
+
+.group-list-title {
+  font-size: 1.5em;
+  padding: 2vh 2vh 0 2vh;
+}
+
+.thumbnail-group-text {
+  padding: 1vh 2vh;
+  color: #aaa;
+  line-height: 1.5em;
+}
+
 .thumbnail-image {
-  height: 10vh;
+  height: 30vh;
   object-fit: cover;
 }
 
