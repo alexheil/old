@@ -1,0 +1,38 @@
+<div class="full-width-container">
+  <div class="container">
+
+    
+
+    <sidebar class="home-sidebar">
+      <% if @categories.any? %>
+        <div class="side-nav">
+          <ul>
+            <% @categories.each do |category| %>
+              <li class="side-nav-links"><%= link_to category.title, category_path(category) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </sidebar>
+
+
+
+    <main class="home-content">
+      <% @categories.each do |category| %>
+        <div class="five-space group-container">
+          <div class="one-column">
+            <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+          </div>
+          <div class="second-column">
+            <div class="two-space group-list-title">
+              <%= link_to category.title, category_path(category) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </main>
+
+
+    
+  </div>
+</div>

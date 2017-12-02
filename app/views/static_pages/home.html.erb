@@ -1,9 +1,9 @@
 <div class="front-container">
-  <% @recent_groups.take(1).each do |group| %>
+  <% @first_group.each do |group| %>
   <div class="black-front">
     <img class="black-background black-front" srcset="<%= group.image %>" width="100%" height="auto" />
   </div>
-  <div class="centered">
+  <div class="centered medium-text">
     <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group), class: "second-link" %>
   </div>
   <div class="bottom-left">
@@ -34,6 +34,9 @@
             <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
           </div>
           <div class="second-column">
+            <div class="category-list-text">
+              <%= group.category.title %>
+            </div>
             <div class="group-list-title">
               <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
             </div>

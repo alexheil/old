@@ -4,7 +4,7 @@ class CreateCategories < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :image
       t.string :anchor, default: ""
-      t.string :link. default: ""
+      t.string :link, default: ""
       t.string :slug
 
       t.timestamps

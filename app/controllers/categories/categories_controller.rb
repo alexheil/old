@@ -3,6 +3,7 @@ class Categories::CategoriesController < ApplicationController
   before_action :authenticate_admin!, except: [:show, :index]
 
   def index
+    @categories = Category.all
   end
 
   def show

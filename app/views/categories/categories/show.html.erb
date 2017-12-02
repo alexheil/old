@@ -1,3 +1,13 @@
+<div class="front-container">
+  <div class="black-front">
+    <img class="black-background black-front" srcset="<%= @category.image %>" width="100%" height="auto" />
+  </div>
+  <div class="large-text centered">
+    <%= @category.title %>
+  </div>
+</div>
+
+
 <%= link_to "Create New Group", new_category_group_path(@category) if admin_signed_in? %>
 <%= link_to "Edit Category", edit_category_path(@category) if admin_signed_in? %>
 <%= link_to "Delete", category_path, method: :delete if admin_signed_in? %>
@@ -23,13 +33,22 @@
 
 
     <main class="home-content">
-      <div class="post-title">
-        <%= @category.title %>
-      </div>
       <% @category.groups.each do |group| %>
-        <div class="three-column">
-          <%= image_tag(group.image, height: '100%', width: '100%' ) %></br>
-          <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
+        <div class="five-space group-container">
+          <div class="one-column">
+            <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+          </div>
+          <div class="second-column">
+            <div class="category-list-text">
+              <%= group.category.title %>
+            </div>
+            <div class="group-list-title">
+              <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
+            </div>
+            <div class="tagline-text">
+              <%= group.tagline %>
+            </div>
+          </div>
         </div>
       <% end %>
     </main>

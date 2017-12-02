@@ -15,18 +15,32 @@
     </div>
 
     <div class="content">
-      <div class="ten-space-top">
-        <%= image_tag(@post.image, height: '100%', width: '100%' ) %>
-      </div>
-      <div class="small-text">
-        <%= link_to @post.image_source, @post.image_source_link if @post.image_source.present? %>
+
+      <% if @post.previous.present? %>
+        <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
+      <% else %>
+        <%= link_to "Back", category_group_path(@category, @group), class: "previous-next" %>
+      <% end %>
+      <% if @post.next.present? %>
+        <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
+      <% else %>
+        <%= link_to "Continue", category_group_path(@category, @group.next_group), class: "previous-next" if @group.next_group.present? %>
+      <% end %>
+
+      <div class="front-container">
+        <div class="ten-space-top">
+          <%= image_tag(@post.image, height: '100%', width: '100%' ) %>
+        </div>
+        <div class="bottom-left">
+          <%= link_to @post.image_source, @post.image_source_link, class: "second-link" if @post.image_source.present? %>
+        </div>
       </div>
 
       <div class="best">
         <%= sanitize(@post.content) %>
       </div>
 
-      <div three-space="three-space">
+      <div class="three-space">
         <%= link_to @post.anchor, @post.link if @post.link.present? %>
       </div>
 
