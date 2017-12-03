@@ -130,7 +130,7 @@ header {
 }
 
 .home-sidebar {
-  margin: 1vh 0;
+  margin: -1vh 0 0 0;
   width: 20%;
   display: inline-block;
   vertical-align: top;
@@ -162,6 +162,11 @@ header {
 .post-title {
   font-size: 2em;
   line-height: 1.15em;
+}
+
+.mini-title {
+  font-size: 1.5em;
+  margin: 3vh 0;
 }
 
 .small-text {
@@ -203,7 +208,6 @@ header {
 .best {
   word-break: break-word;
   white-space: pre-line;
-  padding-bottom: 3vh;
   h3 {
     margin: 1vh 0 -20px 0;
   }
@@ -272,9 +276,14 @@ header {
 }
 
 .tagline-text {
-  padding: 1vh 2vh;
+  padding: 0 2vh;
   color: #aaa;
   line-height: 1.5em;
+}
+
+.author-text {
+  color: #aaa;
+  font-size: .75em;
 }
 
 .category-list-text {
@@ -389,6 +398,12 @@ header {
       display: block;
       padding: 2vh 0;
       position: relative;
+      &:first-child {
+        padding: 0 0 2vh 0;
+      }
+      &:last-child {
+        padding: 2vh 0 0 0;
+      }
     }
   }
 }
@@ -403,7 +418,7 @@ header {
 .header-container {
   width: 95%;
   margin: 0 auto;
-  padding: 3vh 0;
+  padding-bottom: 1vh;
   border-bottom: 1px solid #ddd;
 }
 

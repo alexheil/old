@@ -3,13 +3,9 @@
     <nav class="footer">
       <span><%= link_to "halowake", root_url, class: "nav-links" %></span>
       <ul>
-        <li><%= link_to "Terms of Use", '#', class: "nav-links" %></li>
-        <li><%= link_to "Privacy", '#', class: "nav-links" %></li>
-        <li><%= link_to "DMCA Policy", '#', class: "nav-links" %></li>
-        <% if admin_signed_in? %>
-          <li><%= link_to "Create Category", new_category_path, class: "nav-links" %></li>
-          <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
-        <% end %>
+        <li><%= link_to "Terms of Use", terms_path, class: "nav-links" %></li>
+        <li><%= link_to "Privacy", privacy_path, class: "nav-links" %></li>
+        <li><%= link_to "About", about_path, class: "nav-links" %></li>
       </ul>
     </nav>
     <div class="footer-disclaimer">

@@ -26,13 +26,19 @@
         <%= @group.title %>
       </div>
 
-      <div class="best padding-horizontal">
+      <div class="author-text padding-horizontal">
+        <%= @group.admin.name %> posted <%= time_ago_in_words(@group.created_at) %> ago.
+      </div>
+
+      <div class="best padding-vertical padding-horizontal">
         <%= sanitize(@group.content) %>
       </div>
 
-      <div class="three-space padding-horizontal">
+      <div class="padding-vertical padding-horizontal">
         <%= link_to @group.anchor, @group.link if @group.link.present? %>
       </div>
+
+      <%= render 'partials/ad_trash' %>
 
       <% if @group.posts.any? %>
         <div class="padding-horizontal padding-vertical">
