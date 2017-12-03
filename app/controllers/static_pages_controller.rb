@@ -6,4 +6,13 @@ class StaticPagesController < ApplicationController
     @first_group = Group.reorder("created_at desc").limit(1)
   end
 
+  def about
+  end
+
+  def privacy
+  end
+
+  def terms
+  end
+
 end

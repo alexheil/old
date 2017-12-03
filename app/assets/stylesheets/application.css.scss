@@ -14,7 +14,7 @@
  *= require_self
  */
 
-$main-color: #e9289c;
+$main-color: #E9289C;
 $accent-color1: #F37EC5;
 $accent-color2: #BE5B00;
 $accent-color3: #FFC695;
@@ -161,7 +161,7 @@ header {
 
 .post-title {
   font-size: 2em;
-  margin: 0 0 5vh 0;
+  line-height: 1.15em;
 }
 
 .small-text {
@@ -203,7 +203,7 @@ header {
 .best {
   word-break: break-word;
   white-space: pre-line;
-  margin-bottom: 3vh;
+  padding-bottom: 3vh;
   h3 {
     margin: 1vh 0 -20px 0;
   }
@@ -255,18 +255,20 @@ header {
 .second-column {
   margin: 0;
   width: 64%;
+  height: 30vh;
+  position: relative;
   display: inline-block;
   vertical-align: top;
 }
 
 .group-container {
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.32);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .group-list-title {
   font-size: 1.5em;
-  padding: 0 2vh;
 }
 
 .tagline-text {
@@ -276,26 +278,61 @@ header {
 }
 
 .category-list-text {
-  padding: 0 2vh;
   color: #aaa;
   font-size: .75em;
 }
 
 .thumbnail-image {
   height: 30vh;
+  border-radius: 4px 0 0 4px;
   object-fit: cover;
+}
+
+.image-border {
+  border-radius: 4px 4px 0 0;
+}
+
+.padding-horizontal {
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+.padding-vertical {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ******************* AD TRASH *************** */
+
+.ad-trash {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1PX solid #ddd;
+}
+
+.ad-title {
+  font-size: .5em;
+  letter-spacing: 5px;
 }
 
 /* ************** NAV **************** */
 
 .previous-next {
-  width: 49%;
+  width: 49.5%;
   display: inline-block;
   padding: 10px 1vw;
   text-align: center;
   font-size: 1em;
   font-weight: 300;
   border: 3px solid $main-color;
+  border-radius: 4px;
   background-color: transparent;
   color: $main-color;
   cursor: pointer;
@@ -320,6 +357,7 @@ header {
   font-size: 1em;
   font-weight: 300;
   border: 3px solid $main-color;
+  border-radius: 4px;
   background-color: transparent;
   color: $main-color;
   cursor: pointer;
@@ -342,7 +380,8 @@ header {
   padding: 2vh;
   background: #fff;
   display: inline-block;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.32);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
   ul {
     padding: 0;
     margin: 0;
@@ -365,7 +404,7 @@ header {
   width: 95%;
   margin: 0 auto;
   padding: 3vh 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
 }
 
 .site-title {
@@ -500,6 +539,35 @@ header {
     width: 100%;
   }
 
+  .site-title {
+    text-align: center;
+  }
+
+  .nav {
+    text-align: center;
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    span {
+      float: none;
+      text-align: center;
+    }
+    ul {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  .previous-next {
+    width: 100%;
+    margin: .5vh 0;
+  }
+
   .side-nav {
     width: 100%;
     padding: 0;
@@ -517,12 +585,26 @@ header {
     width: 100%;
   }
 
+  .thumbnail-image {
+    border-radius: 4px 4px 0 0;
+    object-fit: cover;
+  }
+
   .second-column {
     width: 100%;
+    height: auto;
+  }
+
+  .bottom {
+    position: relative;
   }
 
   .tagline-text {
     margin-bottom: 1vh;
+  }
+
+  .content {
+    width: 100%;
   }
 
 }

@@ -11,30 +11,31 @@
     <div class="category-title">
       <%= @category.title %>
     </div>
-    <div class="post-title">
-      <%= @group.title %>
-    </div>
 
     <div class="content group-container">
       <div class="front-container">
-        <div class="ten-space-top">
-          <%= image_tag(@group.image, height: '100%', width: '100%' ) %>
+        <div class="one-space">
+          <img class="image-border" srcset="<%= @group.image %>" width="100%" height="auto" />
         </div>
         <div class="bottom-left">
           <%= link_to @group.image_source, @group.image_source_link, class: "second-link" if @group.image_source.present? %>
         </div>
       </div>
 
-      <div class="best">
+      <div class="post-title padding-horizontal padding-vertical">
+        <%= @group.title %>
+      </div>
+
+      <div class="best padding-horizontal">
         <%= sanitize(@group.content) %>
       </div>
 
-      <div class="three-space">
+      <div class="three-space padding-horizontal">
         <%= link_to @group.anchor, @group.link if @group.link.present? %>
       </div>
 
       <% if @group.posts.any? %>
-        <div class="thumbnail-group-text">
+        <div class="padding-horizontal padding-vertical">
           <%= link_to "Get Started", category_group_post_path(@category, @group, @group.posts.first), class: "first-post" %>
         </div>
       <% end %>

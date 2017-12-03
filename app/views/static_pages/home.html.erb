@@ -34,14 +34,19 @@
             <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
           </div>
           <div class="second-column">
-            <div class="category-list-text">
+            <div class="category-list-text padding-horizontal">
               <%= group.category.title %>
             </div>
-            <div class="group-list-title">
+            <div class="group-list-title padding-horizontal">
               <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
             </div>
             <div class="tagline-text">
               <%= group.tagline %>
+            </div>
+            <div class="bottom">
+              <div class="padding-vertical padding-horizontal">
+                <%= link_to "Read More...", category_group_path(Category.find(group.category_id).slug, group), class: "first-post" %>
+              </div>
             </div>
           </div>
         </div>
