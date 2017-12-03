@@ -1,7 +1,9 @@
 <header class="full-width-container">
   <div class="header-container">
     <nav class="nav">
-      <%= link_to "halowake", root_url, class: "site-title" %>
+      <div class="site-title">
+        <a href="http://halowake.com"><span class="bold">halo</span>wake</a>
+      </div>
       <ul>
         <% if admin_signed_in? %>
           <li><%= link_to "Create Category", new_category_path, class: "nav-links" %></li>

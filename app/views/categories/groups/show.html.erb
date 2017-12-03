@@ -1,3 +1,4 @@
+<%= provide(:title, sanitize(@group.title)) %>
 
 <%= link_to "Create New Post", new_category_group_post_path(@category, @group) if admin_signed_in? %>
 <%= link_to "Edit Group", edit_category_group_path(@category, @group) if admin_signed_in? %>

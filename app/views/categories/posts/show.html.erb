@@ -1,3 +1,5 @@
+<%= provide(:title, sanitize(@post.title)) %>
+
 <%= link_to "Edit Post", edit_category_group_post_path(@category, @group, @post) if admin_signed_in? %>
 <%= link_to "Delete", category_group_post_path, method: :delete if admin_signed_in? %>
 
