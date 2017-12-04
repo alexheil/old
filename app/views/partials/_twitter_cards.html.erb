@@ -1,0 +1,15 @@
+<% if content_for?(:og_header) %>
+  <%= yield(:og_header) %>
+<% else %>
+  <meta property="og:url" content="http://www.halowake.com" />
+  <meta property="og:title" content="Halowake" />
+  <meta property="og:description" content="One of those clickbait sites that you look at instead of being productive." />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Halowake" />
+  <meta name="twitter:description" content="One of those clickbait sites that you look at instead of being productive." />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="http://www.halowake.com" />
+  <meta name="twitter:site" content="@halowake" />
+  <meta name="twitter:creator" content="@RealAlexHeil">
+<% end %>

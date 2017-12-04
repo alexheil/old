@@ -1,9 +1,21 @@
 <%= provide(:title, sanitize(@group.title)) %>
 
+<% content_for :og_header do %>
+  <meta property="og:url" content="<%= category_group_url(@category, @group) %>" />
+  <meta property="og:title" content="<%= @group.title %>" />
+  <meta property="og:description" content="<%= @group.tagline %>" />
+  <meta property="og:image" content="<%= @group.image %>" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= @group.title %>" />
+  <meta name="twitter:description" content="<%= @group.tagline %>" />
+  <meta name="twitter:image" content="<%= @group.image %>" />
+  <meta name="twitter:url" content="<%= category_group_url(@category, @group) %>" />
+  <meta name="twitter:site" content="@halowake" />
+<% end %>
+
 <%= link_to "Create New Post", new_category_group_post_path(@category, @group) if admin_signed_in? %>
 <%= link_to "Edit Group", edit_category_group_path(@category, @group) if admin_signed_in? %>
 <%= link_to "Delete", category_group_path, method: :delete  if admin_signed_in? %>
-
 
 
 <div class="full-width-container">
