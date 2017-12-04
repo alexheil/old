@@ -6,6 +6,8 @@ class Group < ApplicationRecord
   belongs_to :category
   has_many :posts, dependent: :destroy
 
+  default_scope -> { order('id DESC') }
+
   validates :title, presence: true
 
   before_save :should_generate_new_friendly_id?, if: :title_changed?

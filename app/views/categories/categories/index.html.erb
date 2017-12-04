@@ -29,6 +29,11 @@
             <div class="two-space group-list-title">
               <%= link_to category.title, category_path(category) %>
             </div>
+            <% category.groups.take(3).each do |group| %>
+              <div class="one-space padding-horizontal">
+                <%= link_to group.title, category_group_path(category, group) %>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
