@@ -47,5 +47,13 @@
         </div>
       <% end %>
 
+      <div class="padding-horizontal padding-vertical">
+        <div class="one-space">
+          Share this on:
+        </div>
+        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="facebook">facebook</a>
+        <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @group.title %> - &amp;url=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="twitter">twitter</a>
+      </div>
+
   </div>
 </div>
