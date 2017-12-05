@@ -34,7 +34,7 @@ body {
 }
 
 img {
-  vertical-align:bottom;
+  vertical-align: bottom;
 }
 
 ul {
@@ -197,6 +197,10 @@ header {
   margin: 3vh 0;
 }
 
+.four-space-top {
+  margin: 4vh 0 0 0;
+}
+
 .five-space {
   margin: 5vh 0;
 }
@@ -299,6 +303,17 @@ header {
   height: 30vh;
   border-radius: 4px 0 0 4px;
   object-fit: cover;
+  display: block;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  &:hover {
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    opacity: .75;
+  }
 }
 
 .image-border {
@@ -351,6 +366,54 @@ header {
   width: 49.5%;
   display: inline-block;
   padding: 10px 1vw;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  border: 3px solid #55acee;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #55acee;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background-color: #55acee;
+    color: #fff;
+  }
+}
+
+.facebook-side {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  border: 3px solid #3b5998;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #3b5998;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background-color: #3b5998;
+    color: #fff;
+  }
+}
+
+.twitter-side {
+  width: 100%;
+  display: block;
   text-align: center;
   font-size: 1em;
   font-weight: 300;
@@ -438,15 +501,14 @@ header {
 }
 
 .side-nav {
-  width: 80%;
-  margin: 5vh 0;
-  padding: 2vh;
+  width: 100%;
+  margin: 3vh 0;
   background: #fff;
   display: inline-block;
   border-radius: 4px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   ul {
-    padding: 0;
+    padding: 2vh;
     margin: 0;
     li {
       display: block;
@@ -606,6 +668,7 @@ header {
 
   .home-sidebar {
     width: 100%;
+    margin: 0 0 0 0;
   }
 
   .site-title {
@@ -635,6 +698,24 @@ header {
   .previous-next {
     width: 100%;
     margin: .5vh 0;
+  }
+
+  .facebook {
+    width: 100%;
+    margin: .5vh 0;
+  }
+
+  .twitter {
+    width: 100%;
+    margin: .5vh 0;
+  }
+
+  .facebook-side {
+    width: 100%;
+  }
+
+  .twitter-side {
+    width: 100%;
   }
 
   .side-nav {

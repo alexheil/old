@@ -17,9 +17,7 @@
 
 <div class="full-width-container">
   <div class="container">
-
-    
-
+  
     <sidebar class="home-sidebar">
       <% if @categories.any? %>
         <div class="side-nav">
@@ -32,13 +30,13 @@
       <% end %>
     </sidebar>
 
-
-
     <main class="home-content">
       <% @category.groups.each do |group| %>
         <div class="three-space group-container">
           <div class="one-column">
-            <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+            <%= link_to(category_group_path(group.category.slug, group)) do %>
+              <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+            <% end %>
           </div>
           <div class="second-column">
             <div class="category-list-text padding-horizontal">
@@ -62,8 +60,6 @@
         </div>
       <% end %>
     </main>
-
-
     
   </div>
 </div>

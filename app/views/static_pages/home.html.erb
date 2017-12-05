@@ -16,6 +16,25 @@
   <div class="container">
 
     <sidebar class="home-sidebar">
+
+      <div class="four-space-top">
+        Keep up on:
+      </div>
+      <div class="one-space">
+        <%= link_to "Facebook", "https://facebook.com/halowake", class: "facebook-side" %>
+      </div>
+      <div class="one-space">
+        <%= link_to "Twitter", "https://twitter.com/halowake", class: "twitter-side" %>
+      </div>
+      <div class="four-space-top">
+        Or get email updates:
+      </div>
+      <div class="field">
+        <div class="text-field">
+          Enter your email
+        </div>
+      </div>
+
       <% if @categories.any? %>
         <div class="side-nav">
           <ul>
@@ -31,14 +50,16 @@
       <% @recent_groups.each do |group| %>
         <div class="three-space group-container">
           <div class="one-column">
-            <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+            <%= link_to(category_group_path(group.category.slug, group)) do %>
+              <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+            <% end %>
           </div>
           <div class="second-column">
             <div class="category-list-text padding-horizontal">
               <%= group.category.title %>
             </div>
             <div class="group-list-title padding-horizontal">
-              <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group) %>
+              <%= link_to group.title, category_group_path(group.category.slug, group) %>
             </div>
             <div class="author-text padding-horizontal">
               <%= group.admin.name %> posted <%= time_ago_in_words(group.created_at) %> ago.
@@ -48,7 +69,7 @@
             </div>
             <div class="bottom">
               <div class="padding-vertical padding-horizontal">
-                <%= link_to "Read More...", category_group_path(Category.find(group.category_id).slug, group), class: "first-post" %>
+                <%= link_to "Read More...", category_group_path(group.category.slug, group), class: "first-post" %>
               </div>
             </div>
           </div>

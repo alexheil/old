@@ -3,8 +3,6 @@
 <div class="full-width-container">
   <div class="container">
 
-    
-
     <sidebar class="home-sidebar">
       <% if @categories.any? %>
         <div class="side-nav">
@@ -17,13 +15,13 @@
       <% end %>
     </sidebar>
 
-
-
     <main class="home-content">
       <% @categories.each do |category| %>
         <div class="five-space group-container">
           <div class="one-column">
-            <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+            <%= link_to(category_path(category)) do %>
+              <img class="thumbnail-image" srcset="<%= category.image %>" width="100%" height="auto" />
+            <% end %>
           </div>
           <div class="second-column">
             <div class="two-space group-list-title">
@@ -39,7 +37,5 @@
       <% end %>
     </main>
 
-
-    
   </div>
 </div>
