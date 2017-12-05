@@ -29,10 +29,15 @@
       <div class="four-space-top">
         Or get email updates:
       </div>
-      <div class="field">
-        <div class="text-field">
-          Enter your email
-        </div>
+      <div class="one-space">
+        <%= form_for(@email, url: emails_path) do |f| %>
+          <div class="field">
+            <%= f.email_field :email, placeholder: "Enter your email", class: "text-field" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Sign up", class: "first-post" %>
+          </div>
+        <% end %>
       </div>
 
       <% if @categories.any? %>

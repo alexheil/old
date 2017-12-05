@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :emails, controller: 'emails/emails', only: [:create, :destroy]
+
 end

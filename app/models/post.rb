@@ -3,7 +3,6 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :group
-  has_many :posts
 
   validates :number, :uniqueness => {:scope => :group_id}, presence: true
   validates :title, presence: true
