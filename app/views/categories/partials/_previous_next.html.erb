@@ -1,0 +1,12 @@
+<div class="padding-horizontal padding-vertical">
+  <% if @post.previous.present? %>
+    <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
+  <% else %>
+    <%= link_to "Back", category_group_path(@category, @group), class: "previous-next" %>
+  <% end %>
+  <% if @post.next.present? %>
+    <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
+  <% else %>
+    <%= link_to "Continue", category_group_path(@category, @group.next_group), class: "previous-next" if @group.next_group.present? %>
+  <% end %>
+</div>

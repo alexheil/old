@@ -1,17 +1,6 @@
 <%= provide(:title, sanitize(@post.title)) %>
 
-<% content_for :og_header do %>
-  <meta property="og:url" content="<%= category_group_url(@category, @group) %>" />
-  <meta property="og:title" content="<%= @group.title %>" />
-  <meta property="og:description" content="<%= @group.tagline %>" />
-  <meta property="og:image" content="<%= @group.image %>" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="<%= @group.title %>" />
-  <meta name="twitter:description" content="<%= @group.tagline %>" />
-  <meta name="twitter:image" content="<%= @group.image %>" />
-  <meta name="twitter:url" content="<%= category_group_url(@category, @group) %>" />
-  <meta name="twitter:site" content="@halowake" />
-<% end %>
+<%= render 'categories/partials/twitter_cards' %>
 
 <%= link_to "Edit Post", edit_category_group_post_path(@category, @group, @post) if admin_signed_in? %>
 <%= link_to "Delete", category_group_post_path, method: :delete if admin_signed_in? %>
@@ -28,18 +17,7 @@
 
     <div class="content group-container">
 
-      <div class="padding-horizontal padding-vertical">
-        <% if @post.previous.present? %>
-          <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
-        <% else %>
-          <%= link_to "Back", category_group_path(@category, @group), class: "previous-next" %>
-        <% end %>
-        <% if @post.next.present? %>
-          <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
-        <% else %>
-          <%= link_to "Continue", category_group_path(@category, @group.next_group), class: "previous-next" if @group.next_group.present? %>
-        <% end %>
-      </div>
+      <%= render 'categories/partials/previous_next' %>
 
       <%= render 'partials/ad_trash' %>
 
@@ -66,18 +44,7 @@
 
       <%= render 'partials/ad_trash' %>
 
-      <div class="padding-horizontal padding-vertical">
-        <% if @post.previous.present? %>
-          <%= link_to "Previous", category_group_post_path(@category, @group, @post.previous), class: "previous-next" %>
-        <% else %>
-          <%= link_to "Back", category_group_path(@category, @group), class: "previous-next" %>
-        <% end %>
-        <% if @post.next.present? %>
-          <%= link_to "Next", category_group_post_path(@category, @group, @post.next), class: "previous-next" %>
-        <% else %>
-          <%= link_to "Continue", category_group_path(@category, @group.next_group), class: "previous-next" if @group.next_group.present? %>
-        <% end %>
-      </div>
+      <%= render 'categories/partials/previous_next' %>
 
       <div class="padding-horizontal padding-vertical">
         <div class="one-space">
@@ -87,28 +54,7 @@
         <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @group.title %> - &amp;url=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="twitter">Twitter</a>
       </div>
 
-      <div class="padding-horizontal padding-vertical">
-        <div class="top-border four-space-top two-padding-top">
-          Get email updates:
-        </div>
-        <div class="one-space">
-          <%= form_for(Email.new, url: emails_path) do |f| %>
-            <div class="two-thirds">
-              <%= f.email_field :email, placeholder: "Enter your email", class: "text-field-white" %>
-            </div>
-            <div class="one-thirds">
-              <%= f.submit "Sign up", class: "first-post-tall" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="four-space-top">
-          Or keep up on:
-        </div>
-        <div class="one-space">
-          <%= link_to "Facebook", "https://facebook.com/halowake", class: "facebook" %>
-          <%= link_to "Twitter", "https://twitter.com/halowake", class: "twitter" %>
-        </div>
-      </div>
+      <%= render 'categories/partials/keep_up' %>
 
     </div>
 

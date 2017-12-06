@@ -31,11 +31,11 @@
       </div>
       <div class="one-space">
         <%= form_for(@email, url: emails_path) do |f| %>
-          <div class="field">
+          <div class="one-space">
             <%= f.email_field :email, placeholder: "Enter your email", class: "text-field" %>
           </div>
           <div class="actions">
-            <%= f.submit "Sign up", class: "first-post" %>
+            <%= f.submit "Sign up", class: "first-post-tall" %>
           </div>
         <% end %>
       </div>
@@ -50,10 +50,6 @@
         </div>
       <% end %>
     </sidebar>
-
-    <% Email.find_each do |email| %>
-      <%= email.email %>
-    <% end %>
 
     <main class="home-content">
       <% @recent_groups.each do |group| %>

@@ -22,6 +22,16 @@ $black: #212121;
 $white: #f4f4f4;
 $fancy-font: 'Open Sans', Helvetica, Arial, sans-serif;
 
+@mixin transition {
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
 
 body {
   padding: 0;
@@ -42,29 +52,18 @@ ul {
 }
 
 a {
+  @include transition;
   color: $main-color;
   text-decoration: none;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     color: $accent-color1;
   }
 }
 
 .second-link {
+  @include transition;
   color: $white;
-  text-decoration: none;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     color: $black;
   }
 }
@@ -117,7 +116,7 @@ header {
 }
 
 .container {
-  width: 95%;
+  width: 96%;
   margin: 0 auto;
 }
 
@@ -347,13 +346,13 @@ header {
 }
 
 .padding-horizontal {
-  padding-left: 2vh;
-  padding-right: 2vh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .padding-vertical {
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .bottom {
@@ -363,99 +362,58 @@ header {
   width: 100%;
 }
 
-.facebook {
-  width: 49.5%;
+@mixin buttons {
+  @include transition;
   display: inline-block;
   text-align: center;
   font-size: 1em;
   font-weight: 300;
-  border: 2px solid #3b5998;
   border-radius: 4px;
   background-color: transparent;
-  color: #3b5998;
   cursor: pointer;
   box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    background-color: #3b5998;
     color: #fff;
+  }
+}
+
+.facebook {
+  @include buttons;
+  width: 49.5%;
+  border: 2px solid #3b5998;
+  color: #3b5998;
+  &:hover {
+    background-color: #3b5998;
   }
 }
 
 .twitter {
+  @include buttons;
   width: 49.5%;
-  display: inline-block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
   border: 2px solid #55acee;
-  border-radius: 4px;
-  background-color: transparent;
   color: #55acee;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     background-color: #55acee;
-    color: #fff;
   }
 }
 
 .facebook-side {
+  @include buttons;
   width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
   border: 2px solid #3b5998;
-  border-radius: 4px;
-  background-color: transparent;
   color: #3b5998;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     background-color: #3b5998;
-    color: #fff;
   }
 }
 
 .twitter-side {
+  @include buttons;
   width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
   border: 2px solid #55acee;
-  border-radius: 4px;
-  background-color: transparent;
   color: #55acee;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     background-color: #55acee;
-    color: #fff;
   }
 }
 
@@ -475,69 +433,31 @@ header {
 /* ************** NAV **************** */
 
 .previous-next {
+  @include buttons;
   width: 49.5%;
-  display: inline-block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
   border: 2px solid $main-color;
-  border-radius: 4px;
-  background-color: transparent;
   color: $main-color;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     background-color: $main-color;
-    color: #fff;
   }
 }
 
 .first-post {
+  @include buttons;
   width: 100%;
-  display: inline-block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
   border: 2px solid $main-color;
-  border-radius: 4px;
-  background-color: transparent;
   color: $main-color;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
     background-color: $main-color;
-    color: #fff;
   }
 }
 
 .first-post-tall {
+  @include buttons;
   width: 100%;
-  padding: 9px 0;
-  display: inline-block;
-  text-align: center;
-  font-size: 1em;
-  font-weight: 300;
+  padding: 10px 0;
   border: 2px solid $main-color;
-  border-radius: 4px;
-  background-color: transparent;
   color: $main-color;
-  cursor: pointer;
-  box-sizing: border-box;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
   &:hover {
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -655,10 +575,6 @@ header {
 
 /* *********** FORMS ******* */
 
-input {
-  padding: 9px 0;
-}
-
 .form-container {
   width: 50%;
   margin: 0 auto;
@@ -668,58 +584,40 @@ input {
   width: 100%;
 }
 
-.text-field {
+@mixin fields {
   width: 100%;
   font-size: 1.25em;
   font-weight: 100;
-  padding: 1vh 1vw;
-  background: $white;
   border-bottom: 1px solid $black;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   display: inline-block;
   box-sizing: border-box;
-  &:focus {
+    &:focus {
     border: 1px solid $black;
   }
+}
+
+.text-field {
+  @include fields;
+  padding: 1vh 1vw;
+  background: $white;
 }
 
 .text-field-white {
-  width: 100%;
-  font-size: 1.25em;
-  font-weight: 100;
-  padding: 1vh 1vw;
+  @include fields;
+  padding: 8px 1vw;
   background: #fff;
-  border-bottom: 1px solid $black;
-  border-top: 1px solid transparent;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  display: inline-block;
-  box-sizing: border-box;
-  &:focus {
-    border: 1px solid $black;
-  }
 }
 
 .text-area {
-  width: 100%;
+  @include fields;
   min-width: 100%;
   max-width: 100%;
   height: 30vh;
-  font-size: 1.25em;
-  font-weight: 100;
-  padding: 16px;
+  padding: 1vh 1vw;
   background: $white;
-  border-top: 1px solid transparent;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-bottom: 1px solid $black;
-  display: inline-block;
-  box-sizing: border-box;
-  &:focus {
-    border: 1px solid $black;
-  }
 }
 
 .field {
@@ -743,39 +641,43 @@ input {
     text-align: center;
   }
 
+  @mixin mobile-nav {
+    float: none;
+    text-align: center;
+  }
+
   .nav {
     text-align: center;
     ul {
-      float: none;
-      text-align: center;
+      @include mobile-nav;
     }
   }
 
   .footer {
     text-align: center;
     span {
-      float: none;
-      text-align: center;
+      @include mobile-nav;
     }
     ul {
-      float: none;
-      text-align: center;
+      @include mobile-nav;
     }
+  }
+
+  @mixin mobile-button {
+    width: 100%;
+    margin: .5vh 0;
   }
 
   .previous-next {
-    width: 100%;
-    margin: .5vh 0;
+    @inlcude mobile-button;
   }
 
   .facebook {
-    width: 100%;
-    margin: .5vh 0;
+    @inlcude mobile-button;
   }
 
   .twitter {
-    width: 100%;
-    margin: .5vh 0;
+    @inlcude mobile-button;
   }
 
   .facebook-side {
@@ -841,15 +743,3 @@ input {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

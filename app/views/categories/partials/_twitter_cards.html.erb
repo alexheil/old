@@ -1,0 +1,12 @@
+<% content_for :og_header do %>
+  <meta property="og:url" content="<%= category_group_url(@category, @group) %>" />
+  <meta property="og:title" content="<%= @group.title %>" />
+  <meta property="og:description" content="<%= @group.tagline %>" />
+  <meta property="og:image" content="<%= @group.image %>" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<%= @group.title %>" />
+  <meta name="twitter:description" content="<%= @group.tagline %>" />
+  <meta name="twitter:image" content="<%= @group.image %>" />
+  <meta name="twitter:url" content="<%= category_group_url(@category, @group) %>" />
+  <meta name="twitter:site" content="@halowake" />
+<% end %>
