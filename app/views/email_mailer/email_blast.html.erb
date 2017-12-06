@@ -1,1 +1,15 @@
-hey
+<div class="container">
+
+  <h1><%= link_to @group.title, category_group_url(@group.category, @group) %></h1>
+
+  <img src="<%= @group.image %>" width="100%" height="auto" />
+
+  <p><%= @group.tagline %></p>
+
+  <p><%= @group.content %></p>
+
+  <%= link_to "Check it out!", category_group_url(@group.category, @group), class: "first-post" %>
+
+</div>
+
+<p class="small"><%= link_to "Unsubscribe", unsubscribe_email_url(@email) %></p>

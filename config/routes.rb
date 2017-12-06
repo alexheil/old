@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :emails, controller: 'emails/emails', only: [:create, :destroy]
+  resources :emails, controller: 'emails/emails', only: [:create, :destroy] do 
+    member do
+      get :unsubscribe, controller: 'emails/emails'
+    end
+  end
 
 end

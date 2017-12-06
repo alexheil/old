@@ -10,6 +10,11 @@ class Emails::EmailsController < ApplicationController
     end
   end
 
+  def unsubscribe
+    @email = Email.find(params[:id]).destroy
+    redirect_to root_url
+  end
+
   def destroy
     @email = Email.find(params[:id]).destroy
     redirect_to root_url
