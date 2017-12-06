@@ -51,6 +51,10 @@
       <% end %>
     </sidebar>
 
+    <% Email.find_each do |email| %>
+      <%= email.email %>
+    <% end %>
+
     <main class="home-content">
       <% @recent_groups.each do |group| %>
         <div class="three-space group-container">

@@ -83,9 +83,33 @@
         <div class="one-space">
           Share this on:
         </div>
-        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="facebook">facebook</a>
-        <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @group.title %> - &amp;url=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="twitter">twitter</a>
+        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="facebook">Facebook</a>
+        <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @group.title %> - &amp;url=<%= category_group_url(@category, @group) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0)" class="twitter">Twitter</a>
       </div>
+
+      <div class="padding-horizontal padding-vertical">
+        <div class="top-border four-space-top two-padding-top">
+          Get email updates:
+        </div>
+        <div class="one-space">
+          <%= form_for(Email.new, url: emails_path) do |f| %>
+            <div class="two-thirds">
+              <%= f.email_field :email, placeholder: "Enter your email", class: "text-field-white" %>
+            </div>
+            <div class="one-thirds">
+              <%= f.submit "Sign up", class: "first-post-tall" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="four-space-top">
+          Or keep up on:
+        </div>
+        <div class="one-space">
+          <%= link_to "Facebook", "https://facebook.com/halowake", class: "facebook" %>
+          <%= link_to "Twitter", "https://twitter.com/halowake", class: "twitter" %>
+        </div>
+      </div>
+
     </div>
 
   </div>
