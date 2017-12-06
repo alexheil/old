@@ -305,7 +305,7 @@ header {
 }
 
 .tagline-text {
-  padding: 0 2vh;
+  padding: 0 20px;
   color: #aaa;
   line-height: 1.5em;
 }
@@ -662,21 +662,19 @@ header {
     }
   }
 
-  @mixin mobile-button {
+  .previous-next {
     width: 100%;
     margin: .5vh 0;
   }
 
-  .previous-next {
-    @inlcude mobile-button;
-  }
-
   .facebook {
-    @inlcude mobile-button;
+    width: 100%;
+    margin: .5vh 0;
   }
 
   .twitter {
-    @inlcude mobile-button;
+    width: 100%;
+    margin: .5vh 0;
   }
 
   .facebook-side {
