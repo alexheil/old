@@ -4,6 +4,9 @@
   <div class="container">
 
     <sidebar class="home-sidebar">
+
+      <%= render 'categories/partials/home_keep_up' %>
+
       <% if @categories.any? %>
         <div class="side-nav">
           <ul>
@@ -16,6 +19,11 @@
     </sidebar>
 
     <main class="home-content">
+
+      <div class="three-space post-title">
+        Categories
+      </div>
+
       <% @categories.each do |category| %>
         <div class="five-space group-container">
           <div class="one-column">

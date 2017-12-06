@@ -1,0 +1,22 @@
+<div class="four-space-top">
+  Keep up on:
+</div>
+<div class="one-space">
+  <%= link_to "Facebook", "https://facebook.com/halowake", class: "facebook-side" %>
+</div>
+<div class="one-space">
+  <%= link_to "Twitter", "https://twitter.com/halowake", class: "twitter-side" %>
+</div>
+<div class="four-space-top">
+  Or get email updates:
+</div>
+<div class="one-space">
+  <%= form_for(Email.new, url: emails_path) do |f| %>
+    <div class="one-space">
+      <%= f.email_field :email, placeholder: "Enter your email", class: "text-field" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "first-post-tall" %>
+    </div>
+  <% end %>
+</div>
