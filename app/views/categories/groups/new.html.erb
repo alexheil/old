@@ -32,6 +32,10 @@
       <div class="field">
         <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
       </div>
+      <div class="field">
+        <%= f.check_box :published %>
+        <%= f.label :published %>
+      </div>
       <div class="actions">
         <%= f.submit "Create Group", class: "first-post" %>
       </div>

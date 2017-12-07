@@ -1,0 +1,7 @@
+<%= @admin.name %>
+
+<% @groups.each do |group| %>
+  <% if group.published == false %>
+    <li><%= link_to group.title, category_group_path(group.category, group) %> - <%= group.published? %> - <%= link_to "Edit Group", edit_category_group_path(group.category, group) %></li>
+  <% end %>
+<% end %>

@@ -1,6 +1,7 @@
 class Categories::PostsController < ApplicationController
 
   before_action :authenticate_admin!, except: :show
+  before_action :unpublished_group, only: :show
 
   def show
     @post = Post.friendly.find(params[:id])
@@ -56,6 +57,13 @@ class Categories::PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :number, :image, :image_source, :image_source_link, :anchor, :link, :embed, :content)
+    end
+
+    def unpublished_group
+      @group = Group.friendly.find(params[:group_id])
+      if @group.published == false
+        redirect_to root_url unless admin_signed_in?
+      end
     end
 
 end

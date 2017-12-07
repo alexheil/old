@@ -11,6 +11,7 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.string :anchor, default: ""
       t.string :link, default: ""
       t.text :content
+      t.boolean :published, default: false
       t.string :slug
 
       t.timestamps

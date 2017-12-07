@@ -61,9 +61,10 @@ ActiveRecord::Schema.define(version: 20171205174700) do
     t.string   "anchor",            default: ""
     t.string   "link",              default: ""
     t.text     "content"
+    t.boolean  "published",         default: false
     t.string   "slug"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["admin_id"], name: "index_groups_on_admin_id"
     t.index ["category_id"], name: "index_groups_on_category_id"
     t.index ["slug"], name: "index_groups_on_slug"

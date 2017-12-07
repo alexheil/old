@@ -1,22 +1,20 @@
 <div class="front-container">
-  <% @first_group.each do |group| %>
   <div class="black-front">
-    <img class="black-background black-front" srcset="<%= group.image %>" width="100%" height="auto" />
+    <img class="black-background black-front" srcset="<%= @first_group.image %>" width="100%" height="auto" />
   </div>
   <div class="centered medium-text">
-    <%= link_to group.title, category_group_path(Category.find(group.category_id).slug, group), class: "second-link" %>
+    <%= link_to @first_group.title, category_group_path(Category.find(@first_group.category_id).slug, @first_group), class: "second-link" %>
   </div>
   <div class="bottom-left">
-    <%= link_to group.image_source, group.image_source_link, class: "second-link" if group.image_source.present? %>
+    <%= link_to @first_group.image_source, @first_group.image_source_link, class: "second-link" if @first_group.image_source.present? %>
   </div>
-  <% end %>
 </div>
 
 <div class="full-width-container three-space">
   <div class="container">
 
     <sidebar class="home-sidebar">
-      
+
       <%= render 'categories/partials/home_keep_up' %>
 
       <% if @categories.any? %>
@@ -32,32 +30,34 @@
 
     <main class="home-content">
       <% @recent_groups.each do |group| %>
-        <div class="three-space group-container">
-          <div class="one-column">
-            <%= link_to(category_group_path(group.category.slug, group)) do %>
-              <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
-            <% end %>
-          </div>
-          <div class="second-column">
-            <div class="category-list-text padding-horizontal">
-              <%= group.category.title %>
+        <% if group.published == true %>
+          <div class="three-space group-container">
+            <div class="one-column">
+              <%= link_to(category_group_path(group.category.slug, group)) do %>
+                <img class="thumbnail-image" srcset="<%= group.image %>" width="100%" height="auto" />
+              <% end %>
             </div>
-            <div class="group-list-title padding-horizontal">
-              <%= link_to group.title, category_group_path(group.category.slug, group) %>
-            </div>
-            <div class="author-text padding-horizontal">
-              <%= group.admin.name %> posted <%= time_ago_in_words(group.created_at) %> ago.
-            </div>
-            <div class="tagline-text">
-              <%= group.tagline %>
-            </div>
-            <div class="bottom">
-              <div class="padding-vertical padding-horizontal">
-                <%= link_to "Read More...", category_group_path(group.category.slug, group), class: "first-post" %>
+            <div class="second-column">
+              <div class="category-list-text padding-horizontal">
+                <%= group.category.title %>
+              </div>
+              <div class="group-list-title padding-horizontal">
+                <%= link_to group.title, category_group_path(group.category.slug, group) %>
+              </div>
+              <div class="author-text padding-horizontal">
+                <%= group.admin.name %> posted <%= time_ago_in_words(group.created_at) %> ago.
+              </div>
+              <div class="tagline-text">
+                <%= group.tagline %>
+              </div>
+              <div class="bottom">
+                <div class="padding-vertical padding-horizontal">
+                  <%= link_to "Read More...", category_group_path(group.category.slug, group), class: "first-post" %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </main>
 
