@@ -1,9 +1,6 @@
 class Categories::PostsController < ApplicationController
 
-  before_action :authenticate_admin!, except: [:show, :index]
-
-  def index
-  end
+  before_action :authenticate_admin!, except: :show
 
   def show
     @post = Post.friendly.find(params[:id])

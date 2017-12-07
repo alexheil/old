@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :categories, controller: 'categories/categories' do
-    resources :groups, controller: 'categories/groups' do
-      resources :posts, controller: 'categories/posts'
+    resources :groups, controller: 'categories/groups', except: :index do
+      resources :posts, controller: 'categories/posts', except: :index
     end
   end
 

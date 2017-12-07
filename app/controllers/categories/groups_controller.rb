@@ -1,9 +1,6 @@
 class Categories::GroupsController < ApplicationController
 
-  before_action :authenticate_admin!, except: [:show, :index]
-
-  def index
-  end
+  before_action :authenticate_admin!, except: :show
 
   def show
     @group = Group.friendly.find(params[:id])
