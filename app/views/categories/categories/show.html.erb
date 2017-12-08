@@ -34,7 +34,7 @@
     </sidebar>
 
     <main class="home-content">
-      <% @category.groups.each do |group| %>
+      <% @groups.each do |group| %>
         <% if group.published == true %>
           <div class="three-space group-container">
             <div class="one-column">
@@ -64,6 +64,8 @@
           </div>
         <% end %>
       <% end %>
+
+       <%= paginate @groups, :window => 2 %>
     </main>
     
   </div>

@@ -9,6 +9,7 @@ class Categories::CategoriesController < ApplicationController
   def show
     @categories = Category.all
     @category = Category.friendly.find(params[:id])
+    @groups = @category.groups.page params[:page]
   end
 
   def create
