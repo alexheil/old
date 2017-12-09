@@ -1,7 +1,9 @@
-<%= @admin.name %>
+<%= @admin.name %></br>
+
+<%= Email.count %> emails
 
 <% @groups.each do |group| %>
   <% if group.published == false %>
-    <li><%= link_to group.title, category_group_path(group.category, group) %> - <%= group.created_at %> - <%= link_to "Edit Group", edit_category_group_path(group.category, group) %></li>
+    <%= link_to group.title, category_group_path(group.category, group) %> - <%= group.created_at %> - <%= link_to "Edit Group", edit_category_group_path(group.category, group) %></br>
   <% end %>
 <% end %>

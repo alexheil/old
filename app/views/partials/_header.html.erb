@@ -7,6 +7,7 @@
       <ul>
         <% if admin_signed_in? %>
           <li><%= link_to "Create Category", new_category_path, class: "nav-links" %></li>
+          <li><%= link_to "Admin Page", admin_path(current_admin.id) %></li>
           <li><%= link_to "Sign Out", sign_out_path, class: "nav-links" %></li>
         <% end %>
         <li><%= link_to "Categories", categories_path, class: "nav-links" %></li>
